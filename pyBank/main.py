@@ -60,7 +60,7 @@ profit_loss=[]
 output_lines=[]
 difference=[]
 
-input_file = os.path.join('budget_data.csv')
+input_file = os.path.join('../Resources', 'budget_data.csv')
 with open(input_file, 'r', newline="") as budget_data:
     csvreader = csv.reader(budget_data, delimiter =',')
     csv_header = next(csvreader)
@@ -111,7 +111,7 @@ output_lines.append(f'Greatest Decrease in Profits: {dateRec[leastInd+1]} (${int
 for outputlines in output_lines:
     print(outputlines)
 
-output_file = os.path.join('budget_output.csv')
+output_file = os.path.join('../Resources/' 'budget_output.csv')
 
 with open(output_file, 'w') as budget_output_file:
     for outputlines in output_lines:
