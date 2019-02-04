@@ -42,12 +42,11 @@ def search_candidate(candidate):
         c = (candidates.index(candidate))
         total[c] = total[c]+1
 #
-#   if not in list, append to the end of the list and retrieve the index again
+#   if not in list, append to the end of the lists (candidates and total) 
 #
     except ValueError:        
         candidates.append(candidate)
         total.append(1)
-        c = (candidates.index(candidate))
          
 
 
@@ -65,7 +64,7 @@ total_votes = sum(vote for vote in total)
 
 # 
 # calculate the percentage of each candidate 
-# percentage in 3 decimal places
+# 
 
 for i in range(0, len(candidates)):
     vote_percent.append(float(total[i]) * 100 /total_votes)
@@ -88,12 +87,15 @@ vote_results.sort(key=operator.itemgetter(0), reverse=True)
 #
 # format the election analysis into a list
 # winner thru sort above is located in index 0
-#  #
+#  
 output_lines.append('Election Results')
 output_lines.append('----------------------------')
 output_lines.append(f'Total Votes : {total_votes}')
 output_lines.append('----------------------------')
 
+#
+# percentage in 3 dec places
+#
 for i in range(0, len(vote_results)):
     dec_places3 = ("{0:.3f}".format(vote_results[i][0]))
     output_lines.append(f'{vote_results[i][1]}  {str(dec_places3)}%  ({str(vote_results[i][2])})')

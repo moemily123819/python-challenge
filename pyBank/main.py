@@ -111,7 +111,7 @@ output_lines.append(f'Greatest Decrease in Profits: {dateRec[leastInd+1]} (${int
 for outputlines in output_lines:
     print(outputlines)
 
-output_file = os.path.join('../Resources/' 'budget_output.csv')
+output_file = os.path.join('../Resources/', 'budget_output.csv')
 
 with open(output_file, 'w') as budget_output_file:
     for outputlines in output_lines:
